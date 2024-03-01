@@ -1,5 +1,8 @@
 import * as Route from '@/api/routes'
 
+/* Controller for the application */
+/* This file contains the functions that are used to fetch data from the API */
+
 export const getBooksByAuthor = async (author: string) => {
     const data = await Route.getByAuthor(author);
     return data;

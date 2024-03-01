@@ -1,14 +1,21 @@
-export const metadata = {
+const metadata = {
     title: "Author",
     description: "Author page",
-};
+  };
 
-export default function AuthorLayout({children}) {
+function AuthorLayout({children}) {
+  
     return (
-        <html>
-            <body>
-                {children}
-            </body>
-        </html>
-    )
-}
+      <html>
+      <body>
+
+      
+      
+      {children}
+      </body>
+      </html>
+    );
+  }
+  
+  export default AuthorLayout;
+  

@@ -1,29 +1,31 @@
+'use client'
+import React, { useEffect } from "react";
+
+import SearchBar from "@/components/SearchBar";
+import { getBooksByAuthor, fetchImage } from "@/api/controller";
+import DataGrid from "@/components/DataGrid";
 
 
-async function loadAuthorData (authorName: string) {
-    try {
-        const response = await fetch('https://openlibrary.org/search/authors.json?q='+authorName);
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.log('Error fetching and parsing data', error);
+function AuthorPage()  {
+    const [books, setBooks] = React.useState([]);
+
+    async function getBooks(author: string){
+        const data = await getBooksByAuthor(author);
+        setBooks(data.data.docs.slice(0, 50));
+        console.log(books);
     }
-}
 
-async function printAuthorData (authorName: string) {
-    const data = await loadAuthorData(authorName);
-    console.log(data);
-}
-
-function AuthorPage () {
-
-    printAuthorData('tolkien');
-
+    useEffect(() => {
+        setBooks([]);
+    }, []);
+    
     return (
         <div>
-        Author Page
+            <SearchBar handleSearch={getBooks}></SearchBar>
+            <br></br>
+            <DataGrid books = {books}></DataGrid>
         </div>
-    )
+    );
 }
 
 export default AuthorPage;

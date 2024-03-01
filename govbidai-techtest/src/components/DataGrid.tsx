@@ -17,7 +17,6 @@ export default function DataGrid({books}) {
 
     useEffect(() => {
         setData(books);
-        console.log(data);
     }, [books]);
 
   return (

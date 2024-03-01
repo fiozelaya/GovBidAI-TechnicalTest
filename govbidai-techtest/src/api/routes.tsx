@@ -30,7 +30,6 @@ params - subject: string
 returns - data: object
 */
 async function getBySubject(subject: string) {
-    console.log(subjectURL + subject)
     const data = await axios.get(subjectURL + subject);
     return data;
 }

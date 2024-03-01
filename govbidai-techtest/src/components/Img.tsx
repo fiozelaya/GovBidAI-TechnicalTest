@@ -3,7 +3,6 @@ import { fetchImage } from '@/api/routes';
 
 export default function Img({ coverEditionKey }) {
     const [image, setImage] = React.useState('');
-    console.log(coverEditionKey);
 
     async function getImage(pCoverEditionKey: string){
         let url: string = '';

@@ -6,14 +6,9 @@ const metadata = {
 function AuthorLayout({children}) {
   
     return (
-      <html>
-      <body>
-
-      
-      
-      {children}
-      </body>
-      </html>
+      <div>
+          {children}
+      </div>
     );
   }
   

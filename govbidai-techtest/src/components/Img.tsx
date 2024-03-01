@@ -6,13 +6,13 @@ export default function Img({ coverEditionKey }) {
     console.log(coverEditionKey);
 
     async function getImage(pCoverEditionKey: string){
-        const url = await fetchImage(pCoverEditionKey);
-        console.log(url);
-        // const width = 128;
-        // const height = 192;
-        // const cols = 5;
-        // const rows = 5;
-        // setImage(`${url}?w=${width * cols}&h=${height * rows}&fit=crop&auto=format`);
+        let url: string = '';
+        if (pCoverEditionKey === undefined) {
+            url = 'https://as1.ftcdn.net/v2/jpg/04/34/72/82/1000_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg';
+        }
+        else{
+            url = await fetchImage(pCoverEditionKey);
+        }
         setImage(url);
     }
 

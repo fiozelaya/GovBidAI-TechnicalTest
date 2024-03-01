@@ -2,15 +2,15 @@
 import React, { useEffect } from "react";
 
 import SearchBar from "@/components/SearchBar";
-import { getBooksByAuthor, fetchImage } from "@/api/controller";
+import { getBooksBySubject, fetchImage } from "@/api/controller";
 import DataGrid from "@/components/DataGrid";
 
 
-function AuthorPage()  {
+function GenrePage()  {
     const [books, setBooks] = React.useState([]);
 
-    async function getBooks(author: string){
-        const data = await getBooksByAuthor(author);
+    async function getBooks(genre: string){
+        const data = await getBooksBySubject(genre);
         setBooks(data.data.docs.slice(0, 50));
     }
 
@@ -27,4 +27,4 @@ function AuthorPage()  {
     );
 }
 
-export default AuthorPage;
+export default GenrePage;

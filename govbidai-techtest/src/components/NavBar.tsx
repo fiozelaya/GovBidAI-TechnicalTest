@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Link from 'next/link';
 
-const pages = ['Author', 'Subject', 'Subject'];
+const pages = ['Author', 'Genre', 'Title'];
 
 export default function NavBar() {
 

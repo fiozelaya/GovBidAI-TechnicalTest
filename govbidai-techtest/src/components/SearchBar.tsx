@@ -1,10 +1,7 @@
-'use client'
 
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
-
-import React, { useState } from 'react';
 
 const Search = styled('div')(({ theme }) => ({
     
@@ -48,7 +45,6 @@ const Search = styled('div')(({ theme }) => ({
   }));
 
 export default function SearchBar({ handleSearch }: { handleSearch: Function }) {
-    const [searchValue, setSearchValue] = useState('');
     return (
 
     <div className="container" >
@@ -58,7 +54,7 @@ export default function SearchBar({ handleSearch }: { handleSearch: Function }) 
             </SearchIconWrapper>
             <StyledInputBase onKeyDown={(event) => {
                 if (event.key === 'Enter'){
-                    setSearchValue((event.target as HTMLInputElement).value);
+                    console.log((event.target as HTMLInputElement).value);
                     handleSearch((event.target as HTMLInputElement).value);
                 }
             }}
